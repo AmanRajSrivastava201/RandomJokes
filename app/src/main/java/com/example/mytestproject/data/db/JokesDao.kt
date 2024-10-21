@@ -13,8 +13,8 @@ interface JokesDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertJokeInHistory(jokesItem: JokesItem)
 
-    @Query("SELECT * from JokesItem")
-    suspend fun getAllJokes(): Response<List<JokesItem>>
+//    @Query("SELECT * from JokesItem")
+//    suspend fun getAllJokes(): Response<List<JokesItem>>
 
     @Query("SELECT * FROM JokesItem WHERE id = :id")
     suspend fun getItemById(id: Int): JokesItem?

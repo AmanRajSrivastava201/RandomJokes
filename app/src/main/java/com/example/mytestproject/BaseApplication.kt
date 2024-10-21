@@ -8,6 +8,6 @@ class BaseApplication : Application() {
     lateinit var daggerComponent: AppComponent
     override fun onCreate() {
         super.onCreate()
-        daggerComponent = DaggerAppComponent.builder().build()
+        daggerComponent = DaggerAppComponent.factory().create(this)
     }
 }

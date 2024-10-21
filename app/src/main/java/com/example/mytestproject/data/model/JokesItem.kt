@@ -19,13 +19,13 @@ data class JokesItem(
 ) {
 
     fun getFinalJoke(): String {
-        val finalJoke = ""
+        var finalJoke = ""
         if (type == JokeType.twopart.name) {
             if (setup != null) {
-                finalJoke + setup
+                finalJoke = finalJoke + setup
             }
             if (delivery != null) {
-                finalJoke + "\n" + delivery
+                finalJoke =  finalJoke + "\n" + delivery
             }
         } else {
             return joke ?: ""
